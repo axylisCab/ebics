@@ -1,0 +1,487 @@
+[
+  {
+    "trigramme": "CAB",
+    "email": "c.abadie@axylis.fr",
+    "agence": "Béziers Mazeran"
+  },
+  {
+    "trigramme": "GAG",
+    "email": "g.agula@axylis.fr",
+    "agence": "Béziers Mazeran"
+  },
+  {
+    "trigramme": "CAL",
+    "email": "c.alary@axylis.fr",
+    "agence": "Béziers Mazeran"
+  },
+  {
+    "trigramme": "SAT",
+    "email": "s.at@axylis.fr",
+    "agence": "Béziers Les Tuileries"
+  },
+  {
+    "trigramme": "CAU",
+    "email": "c.aussant@axylis.fr",
+    "agence": "Narbonne"
+  },
+  {
+    "trigramme": "SAU",
+    "email": "s.authier@axylis.fr",
+    "agence": "Béziers Mazeran"
+  },
+  {
+    "trigramme": "CBT",
+    "email": "c.baert@axylis.fr",
+    "agence": "Béziers Mazeran"
+  },
+  {
+    "trigramme": "SBA",
+    "email": "s.banuls@axylis.fr",
+    "agence": "Béziers Les Tuileries"
+  },
+  {
+    "trigramme": "PBI",
+    "email": "p.bigel@axylis.fr",
+    "agence": "Béziers Les Tuileries"
+  },
+  {
+    "trigramme": "GBI",
+    "email": "g.biscaras@axylis.fr",
+    "agence": "Béziers Mazeran"
+  },
+  {
+    "trigramme": "EBO",
+    "email": "e.borras@axylis.fr",
+    "agence": "Béziers Mazeran"
+  },
+  {
+    "trigramme": "TBR",
+    "email": "t.bras@axylis.fr",
+    "agence": "Agde"
+  },
+  {
+    "trigramme": "ABR",
+    "email": "a.bravo@axylis.fr",
+    "agence": "Béziers Mazeran"
+  },
+  {
+    "trigramme": "MBU",
+    "email": "m.burnet@axylis.fr",
+    "agence": "Béziers Mazeran"
+  },
+  {
+    "trigramme": "ECA",
+    "email": "e.cadilhac@axylis.fr",
+    "agence": "Béziers Mazeran"
+  },
+  {
+    "trigramme": "ACM",
+    "email": "a.camberabero@axylis.fr",
+    "agence": "Béziers Mazeran"
+  },
+  {
+    "trigramme": "CCA",
+    "email": "c.carrara@axylis.fr",
+    "agence": "Béziers Les Tuileries"
+  },
+  {
+    "trigramme": "JCA",
+    "email": "j.casenove@axylis.fr",
+    "agence": "Béziers Les Tuileries"
+  },
+  {
+    "trigramme": "GCH",
+    "email": "g.champenois@axylis.fr",
+    "agence": "Béziers Mazeran"
+  },
+  {
+    "trigramme": "CYC",
+    "email": "c.charbonnel@axylis.fr",
+    "agence": "Agde"
+  },
+  {
+    "trigramme": "FCC",
+    "email": "f.chiron@axylis.fr",
+    "agence": "Béziers Mazeran"
+  },
+  {
+    "trigramme": "CCI",
+    "email": "c.cimarra@axylis.fr",
+    "agence": "Clermont l’Hérault"
+  },
+  {
+    "trigramme": "ICL",
+    "email": "I.clanet@axylis.fr",
+    "agence": "Béziers Les Tuileries"
+  },
+  {
+    "trigramme": "MCL",
+    "email": "m.clausell@axylis.fr",
+    "agence": "Béziers Mazeran"
+  },
+  {
+    "trigramme": "RCO",
+    "email": "r.comelli@axylis.fr",
+    "agence": "Béziers Mazeran"
+  },
+  {
+    "trigramme": "CCO",
+    "email": "c.coste@axylis.fr",
+    "agence": "Agde"
+  },
+  {
+    "trigramme": "EDA",
+    "email": "e.dalmasse@axylis.fr",
+    "agence": "Agde"
+  },
+  {
+    "trigramme": "GDE",
+    "email": "g.delapena@axylis.fr",
+    "agence": "Béziers Mazeran"
+  },
+  {
+    "trigramme": "LDE",
+    "email": "l.delwasse@axylis.fr",
+    "agence": "Béziers Les Tuileries"
+  },
+  {
+    "trigramme": "RDE",
+    "email": "r.denis@axylis.fr",
+    "agence": "Béziers Mazeran"
+  },
+  {
+    "trigramme": "JDE",
+    "email": "j.deponge@axylis.fr",
+    "agence": "Béziers Mazeran"
+  },
+  {
+    "trigramme": "TDM",
+    "email": "t.dimarino@axylis.fr",
+    "agence": "Béziers Mazeran"
+  },
+  {
+    "trigramme": "SDO",
+    "email": "s.dotte@axylis.fr",
+    "agence": "Béziers Mazeran"
+  },
+  {
+    "trigramme": "JMD",
+    "email": "jm.dubois@axylis.fr",
+    "agence": "Béziers Mazeran"
+  },
+  {
+    "trigramme": "ADU",
+    "email": "a.dupuy@axylis.fr",
+    "agence": "Béziers Mazeran"
+  },
+  {
+    "trigramme": "KARI",
+    "email": "k.eich@axylis.fr",
+    "agence": "Béziers Mazeran"
+  },
+  {
+    "trigramme": "AES",
+    "email": "a.escribe@axylis.fr",
+    "agence": "Béziers Mazeran"
+  },
+  {
+    "trigramme": "JFA",
+    "email": "j.faurie@axylis.fr",
+    "agence": "Béziers Mazeran"
+  },
+  {
+    "trigramme": "ERI",
+    "email": "e.rigal@axylis.fr",
+    "agence": "Béziers Mazeran"
+  },
+  {
+    "trigramme": "MFE",
+    "email": "m.ferrero@axylis.fr",
+    "agence": "Béziers Mazeran"
+  },
+  {
+    "trigramme": "SFI",
+    "email": "s.figueiredo@axylis.fr",
+    "agence": "Clermont l’Hérault"
+  },
+  {
+    "trigramme": "JFO",
+    "email": "j.foucras@axylis.fr",
+    "agence": "Béziers Mazeran"
+  },
+  {
+    "trigramme": "DFR",
+    "email": "d.frasquet@axylis.fr",
+    "agence": "Agde"
+  },
+  {
+    "trigramme": "SGA",
+    "email": "s.garcia@axylis.fr",
+    "agence": "Béziers Mazeran"
+  },
+  {
+    "trigramme": "MGA",
+    "email": "m.gayout@axylis.fr",
+    "agence": "Béziers Les Tuileries"
+  },
+  {
+    "trigramme": "AGP",
+    "email": "a.gept@axylis.fr",
+    "agence": "Béziers Mazeran"
+  },
+  {
+    "trigramme": "MGI",
+    "email": "m.gilet@axylis.fr",
+    "agence": "Béziers Mazeran"
+  },
+  {
+    "trigramme": "EGO",
+    "email": "e.godrovaite@axylis.fr",
+    "agence": "Agde"
+  },
+  {
+    "trigramme": "CGO",
+    "email": "c.gosselin@axylis.fr",
+    "agence": "Béziers Les Tuileries"
+  },
+  {
+    "trigramme": "BGR",
+    "email": "b.grau@axylis.fr",
+    "agence": "Béziers Mazeran"
+  },
+  {
+    "trigramme": "CHU",
+    "email": "c.huchin@axylis.fr",
+    "agence": "Béziers Mazeran"
+  },
+  {
+    "trigramme": "SJA",
+    "email": "s.jammes@axylis.fr",
+    "agence": "Béziers Mazeran"
+  },
+  {
+    "trigramme": "SLA",
+    "email": "s.lambert@axylis.fr",
+    "agence": "Béziers Mazeran"
+  },
+  {
+    "trigramme": "SLV",
+    "email": "s.lavelle@axylis.fr",
+    "agence": "Béziers Mazeran"
+  },
+  {
+    "trigramme": "VLE",
+    "email": "v.le-meur@axylis.fr",
+    "agence": "Béziers Mazeran"
+  },
+  {
+    "trigramme": "ECH",
+    "email": "v.le-meur@axylis.fr",
+    "agence": "Béziers Mazeran"
+  },
+  {
+    "trigramme": "CLU",
+    "email": "c.luneau@axylis.fr",
+    "agence": "Béziers Les Tuileries"
+  },
+  {
+    "trigramme": "EBR",
+    "email": "e.marchal@axylis.fr",
+    "agence": "Béziers Mazeran"
+  },
+  {
+    "trigramme": "JMA",
+    "email": "j.martagon@axylis.fr",
+    "agence": "Béziers Les Tuileries"
+  },
+  {
+    "trigramme": "NMA",
+    "email": "v.martinez@axylis.fr",
+    "agence": "Agde"
+  },
+  {
+    "trigramme": "VMA",
+    "email": "n.martinez@axylis.fr",
+    "agence": "Béziers Mazeran"
+  },
+  {
+    "trigramme": "EME",
+    "email": "e.menivale@axylis.fr",
+    "agence": "Béziers Mazeran"
+  },
+  {
+    "trigramme": "CHRI",
+    "email": "c.mouysset@axylis.fr",
+    "agence": "Béziers Mazeran"
+  },
+  {
+    "trigramme": "LGL",
+    "email": "l.gloubokii@axylis.fr",
+    "agence": "Béziers Mazeran"
+  },
+  {
+    "trigramme": "FNU",
+    "email": "f.nus@axylis.fr",
+    "agence": "Béziers Mazeran"
+  },
+  {
+    "trigramme": "NNU",
+    "email": "n.nutini@axylis.fr",
+    "agence": "Béziers Mazeran"
+  },
+  {
+    "trigramme": "POR",
+    "email": "p.ortega@axylis.fr",
+    "agence": "Béziers Mazeran"
+  },
+  {
+    "trigramme": "NOR",
+    "email": "n.ortiz@axylis.fr",
+    "agence": "Béziers Mazeran"
+  },
+  {
+    "trigramme": "SPE",
+    "email": "y.pereira@axylis.fr",
+    "agence": "Agde"
+  },
+  {
+    "trigramme": "YPE",
+    "email": "s.pereira@axylis.fr",
+    "agence": "Béziers Mazeran"
+  },
+  {
+    "trigramme": "LPE",
+    "email": "l.perez@axylis.fr",
+    "agence": "Béziers Mazeran"
+  },
+  {
+    "trigramme": "SPR",
+    "email": "s.perrin@axylis.fr",
+    "agence": "Béziers Mazeran"
+  },
+  {
+    "trigramme": "PPE",
+    "email": "p.peyras@axylis.fr",
+    "agence": "Béziers Mazeran"
+  },
+  {
+    "trigramme": "PPH",
+    "email": "p.philippe@axylis.fr",
+    "agence": "Béziers Mazeran"
+  },
+  {
+    "trigramme": "API",
+    "email": "a.pigne@axylis.fr",
+    "agence": "Béziers Mazeran"
+  },
+  {
+    "trigramme": "SRE",
+    "email": "s.retaux@axylis.fr",
+    "agence": "Béziers Mazeran"
+  },
+  {
+    "trigramme": "SRU",
+    "email": "s.ruiz@axylis.fr",
+    "agence": "Béziers Mazeran"
+  },
+  {
+    "trigramme": "MAS",
+    "email": "ma.sana@axylis.fr",
+    "agence": "Béziers Mazeran"
+  },
+  {
+    "trigramme": "MSI",
+    "email": "m.silva@axylis.fr",
+    "agence": "Béziers Mazeran"
+  },
+  {
+    "trigramme": "SSO",
+    "email": "s.soto@axylis.fr",
+    "agence": "Béziers Les Tuileries"
+  },
+  {
+    "trigramme": "KSO",
+    "email": "k.souchet@axylis.fr",
+    "agence": "Béziers Mazeran"
+  },
+  {
+    "trigramme": "VTH",
+    "email": "v.thibault@axylis.fr",
+    "agence": "Béziers Mazeran"
+  },
+  {
+    "trigramme": "NVS",
+    "email": "n.vanderschoor@axylis.fr",
+    "agence": "Agde"
+  },
+  {
+    "trigramme": "DVI",
+    "email": "d.villeminot@axylis.fr",
+    "agence": "Béziers Mazeran"
+  },
+  {
+    "trigramme": "DYE",
+    "email": "d.yellec@axylis.fr",
+    "agence": "Béziers Mazeran"
+  },
+  {
+    "trigramme": "AYO",
+    "email": "a.youssoufi@axylis.fr",
+    "agence": "Clermont l’Hérault"
+  },
+  {
+    "trigramme": "LCA",
+    "email": "l.caucat@axylis.fr",
+    "agence": "Béziers Mazeran"
+  },
+  {
+    "trigramme": "MAU",
+    "email": "m.aufort@axylis.fr",
+    "agence": "Béziers Mazeran"
+  },
+  {
+    "trigramme": "PAU",
+    "email": "p.aujoulat@axylis.fr",
+    "agence": "Béziers Mazeran"
+  },
+  {
+    "trigramme": "AGO",
+    "email": "a.godeffroy@axylis.fr",
+    "agence": "Béziers Mazeran"
+  },
+  {
+    "trigramme": "ARU",
+    "email": "a.roucoules@axylis.fr",
+    "agence": "Béziers Mazeran"
+  },
+  {
+    "trigramme": "RPB",
+    "email": "rp.banuls@axylis.fr",
+    "agence": "Béziers Les Tuileries"
+  },
+  {
+    "trigramme": "BGA",
+    "email": "be.grau@axylis.fr",
+    "agence": "Narbonne"
+  },
+  {
+    "trigramme": "SSA",
+    "email": "s.sauniere@axylis.fr",
+    "agence": "Narbonne"
+  },
+  {
+    "trigramme": "LSE",
+    "email": "l.serre@axylis.fr",
+    "agence": "Narbonne"
+  },
+  {
+    "trigramme": "DFL",
+    "email": "d.flores@axylis.fr",
+    "agence": "Béziers Mazeran"
+  },
+  {
+    "trigramme": "SRO",
+    "email": "s.rodrigues@axylis.fr",
+    "agence": "Béziers Mazeran"
+  }
+]
