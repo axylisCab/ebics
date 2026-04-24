@@ -22,3 +22,10 @@ z-old/
 # Ignorer le fichier de suivi Excel pour éviter de commiter des données clients
 # (Gardez une copie vide "DEMANDE EBICS_TEMPLATE.xlsx" si besoin)
 DEMANDE EBICS.xlsx
+
+# Ignorer tous les fichiers PDF et images à la racine (potentiels RIB)
+*.pdf
+*.jpg
+*.jpeg
+*.png
+!axylis_logo.png
