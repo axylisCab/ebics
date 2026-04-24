@@ -16,3 +16,9 @@ yarn-error.log*
 *.njsproj
 *.sln
 *.sw?
+DEPOT_EBICS/
+z-old/
+~$*
+# Ignorer le fichier de suivi Excel pour éviter de commiter des données clients
+# (Gardez une copie vide "DEMANDE EBICS_TEMPLATE.xlsx" si besoin)
+DEMANDE EBICS.xlsx

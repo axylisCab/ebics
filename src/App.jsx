@@ -1,9 +1,8 @@
 import React, { useState, useMemo, useEffect } from 'react'
 import Tesseract from 'tesseract.js'
 import * as pdfjsLib from 'pdfjs-dist'
-
-// Import direct du worker pour Vite (version 4+)
 import pdfjsWorker from 'pdfjs-dist/build/pdf.worker.mjs?url'
+import { jsPDF } from 'jspdf'
 import collaborateursData from '../collaborateurs.json'
 import axylisLogo from '../axylis_logo.png'
 
@@ -15,6 +14,7 @@ function App() {
   const [debugText, setDebugText] = useState('')
   const [showErrors, setShowErrors] = useState(false)
   const [submitted, setSubmitted] = useState(false)
+  const [ribPreview, setRibPreview] = useState(null)
   const [formData, setFormData] = useState({
     numDossier: '',
     nomEntreprise: '',
@@ -27,6 +27,8 @@ function App() {
     iban: '',
     bic: '',
     titulaireCompte: '',
+    responsable: '',
+    commentaires: '',
     ribFile: null
   })
 
@@ -112,6 +114,12 @@ function App() {
         canvas.width = viewport.width;
         await page.render({ canvasContext: context, viewport }).promise;
         source = canvas.toDataURL('image/png');
+        setRibPreview(source);
+      } else {
+        // Preview pour image directe
+        const reader = new FileReader();
+        reader.onloadend = () => setRibPreview(reader.result);
+        reader.readAsDataURL(file);
       }
 
       setStatus('Analyse par l\'Intelligence Artificielle...')
@@ -152,18 +160,134 @@ function App() {
     formData.iban && 
     formData.bic && 
     formData.titulaireCompte &&
+    formData.responsable &&
     formData.logiciel && 
     (formData.logiciel !== 'Autres' || formData.autreLogiciel)
 
-  const handleSubmit = (e) => {
+  const generatePDF = () => {
+    const doc = new jsPDF()
+    const orange = [232, 73, 36]
+    const navy = [11, 32, 60]
+
+    // Header
+    doc.setFillColor(...navy)
+    doc.rect(0, 0, 210, 30, 'F')
+    doc.setTextColor(255, 255, 255)
+    doc.setFontSize(22)
+    doc.text("AX Y L I S", 105, 15, { align: 'center' })
+    doc.setFontSize(14)
+    doc.text("DEMANDE D'OUVERTURE EBICS", 105, 24, { align: 'center' })
+
+    // Date
+    doc.setTextColor(100, 100, 100)
+    doc.setFontSize(10)
+    doc.text(`Généré le : ${new Date().toLocaleDateString('fr-FR')} à ${new Date().toLocaleTimeString('fr-FR')}`, 190, 40, { align: 'right' })
+
+    // Section 1: Collaborateur
+    doc.setFontSize(14)
+    doc.setTextColor(...orange)
+    doc.text("1. COLLABORATEUR ET AGENCE", 20, 50)
+    doc.setDrawColor(...orange)
+    doc.line(20, 52, 200, 52)
+
+    doc.setFontSize(11)
+    doc.setTextColor(0, 0, 0)
+    doc.text(`Trigramme : ${formData.trigramme}`, 25, 60)
+    doc.text(`Agence : ${formData.agence}`, 25, 67)
+    doc.text(`Email : ${formData.emailCollaborateur}`, 25, 74)
+
+    // Section 2: Dossier Client
+    doc.setFontSize(14)
+    doc.setTextColor(...orange)
+    doc.text("2. INFORMATIONS DU DOSSIER CLIENT", 20, 90)
+    doc.line(20, 92, 200, 92)
+
+    doc.setFontSize(11)
+    doc.setTextColor(0, 0, 0)
+    doc.text(`Dossier n° : ${formData.numDossier}`, 25, 100)
+    doc.text(`Entreprise : ${formData.nomEntreprise}`, 25, 107)
+    doc.text(`SIRET : ${formData.siret || 'N/C'}`, 25, 114)
+    doc.text(`Responsable : ${formData.responsable}`, 25, 121)
+    doc.text(`Logiciel : ${formData.logiciel === 'Autres' ? formData.autreLogiciel : formData.logiciel}`, 25, 128)
+
+    // Section 3: Banque
+    doc.setFontSize(14)
+    doc.setTextColor(...orange)
+    doc.text("3. COORDONNEES BANCAIRES", 20, 140)
+    doc.line(20, 142, 200, 142)
+
+    doc.setFontSize(11)
+    doc.setTextColor(0, 0, 0)
+    doc.text(`Titulaire : ${formData.titulaireCompte}`, 25, 150)
+    doc.setFont("helvetica", "bold")
+    doc.text(`IBAN : ${formData.iban}`, 25, 157)
+    doc.text(`BIC : ${formData.bic}`, 25, 164)
+    doc.setFont("helvetica", "normal")
+
+    // Section 4: Commentaires
+    if (formData.commentaires) {
+      doc.setFontSize(14)
+      doc.setTextColor(...orange)
+      doc.text("4. COMMENTAIRES", 20, 180)
+      doc.line(20, 182, 200, 182)
+      doc.setFontSize(11)
+      doc.setTextColor(0, 0, 0)
+      const splitComments = doc.splitTextToSize(formData.commentaires, 170)
+      doc.text(splitComments, 25, 190)
+    }
+
+    // Section 4: RIB (Image)
+    if (ribPreview) {
+      doc.addPage()
+      doc.setFontSize(14)
+      doc.setTextColor(...orange)
+      doc.text("4. COPIE DU RIB", 20, 20)
+      doc.line(20, 22, 200, 22)
+      
+      try {
+        doc.addImage(ribPreview, 'PNG', 20, 30, 170, 0)
+      } catch (e) {
+        doc.text("L'image du RIB n'a pas pu être insérée.", 25, 40)
+      }
+    }
+
+    return doc.output('datauristring'); // On retourne le base64 pour le serveur
+  }
+
+  const handleSubmit = async (e) => {
     e.preventDefault()
     if (!isFormValid) {
       setShowErrors(true)
-      // On réinitialise l'erreur après un moment pour pouvoir "re-secouer"
       setTimeout(() => setShowErrors(false), 2000)
       return
     }
-    setSubmitted(true)
+
+    setLoading(true)
+    setStatus('Génération et archivage...')
+
+    try {
+      // 1. Génération du PDF
+      const pdfBase64 = generatePDF()
+
+      // 2. Envoi au serveur (Excel + DEPOT PDF + Mail)
+      const response = await fetch('http://localhost:3001/api/submit', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ formData, pdfBase64 })
+      });
+
+      if (response.ok) {
+        setSubmitted(true)
+      } else {
+        throw new Error('Erreur serveur')
+      }
+    } catch (err) {
+      console.error(err)
+      alert("Erreur de connexion avec le serveur d'archivage. Le PDF a été téléchargé localement, mais veuillez le transmettre manuellement à Gisèle.")
+      setSubmitted(true)
+    } finally {
+      setLoading(false)
+    }
   }
 
   const getErrorClass = (val) => (showErrors && !val) ? 'input-error' : ''
@@ -195,7 +319,7 @@ function App() {
         <form onSubmit={handleSubmit} noValidate>
           {/* Section 1: Le Dossier */}
           <div className="section-title">1. Informations du Dossier</div>
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 2fr 1fr', gap: '20px', marginBottom: '20px' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px', marginBottom: '20px' }}>
             <div>
               <label className="label">Numéro de dossier</label>
               <input 
@@ -218,6 +342,9 @@ function App() {
                 required 
               />
             </div>
+          </div>
+
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px', marginBottom: '20px' }}>
             <div>
               <label className="label">SIRET</label>
               <input 
@@ -230,6 +357,17 @@ function App() {
                   const val = e.target.value.replace(/\D/g, '');
                   setFormData({...formData, siret: val});
                 }} 
+              />
+            </div>
+            <div>
+              <label className="label">Responsable entreprise</label>
+              <input 
+                type="text" 
+                className={getErrorClass(formData.responsable)}
+                placeholder="NOM DU DIRIGEANT" 
+                value={formData.responsable} 
+                onChange={e => setFormData({...formData, responsable: e.target.value.toUpperCase()})} 
+                required 
               />
             </div>
           </div>
@@ -337,6 +475,18 @@ function App() {
                 required 
               />
             )}
+          </div>
+          
+          <div style={{ marginBottom: '30px' }}>
+            <label className="label">Commentaires (Optionnel)</label>
+            <textarea 
+              className="input-field" 
+              placeholder="Notes particulières, urgence, etc." 
+              rows="3" 
+              value={formData.commentaires} 
+              onChange={e => setFormData({...formData, commentaires: e.target.value})}
+              style={{ resize: 'vertical', minHeight: '80px' }}
+            />
           </div>
 
           <button type="submit" className="btn submit-btn" disabled={loading}>
